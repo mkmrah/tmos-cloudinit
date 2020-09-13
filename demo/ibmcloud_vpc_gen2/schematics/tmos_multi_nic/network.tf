@@ -8,6 +8,10 @@ locals {
 
 resource "random_uuid" "namer" {}
 
+data "ibm_is_security_group" "f5_open_sg" {
+  identifier = "sd-0eab0450-aea1-5cfb-b976-e1f3877b45fa"
+}
+/*
 // open up port security security group
 resource "ibm_is_security_group" "f5_open_sg" {
   name           = "sg-${random_uuid.namer.result}"
@@ -30,3 +34,4 @@ resource "ibm_is_security_group_rule" "f5_allow_outbound" {
   direction  = "outbound"
   remote     = "0.0.0.0/0"
 }
+*/
