@@ -131,7 +131,7 @@ resource "ibm_is_instance" "f5_ve_instance" {
   user_data  = data.template_file.user_data.rendered
   depends_on = [ibm_is_security_group_rule.f5_allow_outbound]
 }
-
+/*
 # create floating IP for management access
 resource "ibm_is_floating_ip" "f5_management_floating_ip" {
   name   = "f0-${random_uuid.namer.result}"
@@ -144,7 +144,7 @@ resource "ibm_is_floating_ip" "f5_management_floating_ip" {
 #  name   = format("f%d-%s", (count.index+1), random_uuid.namer.result)
 #  target = ibm_is_instance.f5_ve_instance.network_interfaces[count.index].id
 #}
-
+*/
 output "resource_name" {
   value = ibm_is_instance.f5_ve_instance.name
 }
@@ -168,11 +168,11 @@ output "instance_id" {
 output "profile_id" {
   value = data.ibm_is_instance_profile.instance_profile.id
 }
-
+/*
 output "f5_shell_access" {
   value = "ssh://root@${ibm_is_floating_ip.f5_management_floating_ip.address}"
 }
-
+*/
 output "f5_phone_home_url" {
   value = var.phone_home_url
 }
