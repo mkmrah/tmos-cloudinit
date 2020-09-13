@@ -67,7 +67,7 @@ locals {
 locals {
   # custom image takes priority over public image
   # image_id = data.ibm_is_image.tmos_custom_image.id == null ? lookup(local.public_image_map[var.tmos_image_name], var.region) : data.ibm_is_image.tmos_custom_image.id
-  image_id = var.tmos_image_name
+  image_id = "r006-1ca34358-b1f0-44b1-bf9a-a8bd9837a672"
   # public image takes priority over custom image
   # image_id = lookup(lookup(local.public_image_map, var.tmos_image_name, {}), var.region, data.ibm_is_image.tmos_custom_image.id)
   template_file = lookup(local.license_map, var.license_type, local.license_map["none"])
