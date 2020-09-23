@@ -9,7 +9,7 @@ locals {
 resource "random_uuid" "namer" {}
 
 data "ibm_is_security_group" "f5_open_sg" {
-  name = "f5-test-sg"
+  name = "sg-048ef26b-961a-974c-cfdd-068786e3e143"
 }
 /*
 // open up port security security group
